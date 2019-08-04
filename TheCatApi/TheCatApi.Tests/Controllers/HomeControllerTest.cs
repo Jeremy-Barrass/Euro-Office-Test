@@ -6,6 +6,7 @@ using System.Text;
 using System.Web.Mvc;
 using TheCatApi;
 using TheCatApi.Controllers;
+using TheCatApi.ViewModels;
 
 namespace TheCatApi.Tests.Controllers
 {
@@ -40,9 +41,10 @@ namespace TheCatApi.Tests.Controllers
 
             // Act
             var result = (ViewResult)controller.GetCategories();
+            var viewModel = result.Model as CategoriesViewModel;
 
             // Assert
-            Assert.IsNotEmpty(result.Model.Categories);
+            Assert.IsNotEmpty(viewModel.Categories);
         }
     }
 }

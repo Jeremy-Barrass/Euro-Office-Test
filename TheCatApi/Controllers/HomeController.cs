@@ -18,7 +18,7 @@ namespace TheCatApi.Controllers
             ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
             ViewData["Runtime"] = isMono ? "Mono" : ".NET";
 
-            return View();
+            return GetCategories();
         }
 
         public ActionResult GetCategories()

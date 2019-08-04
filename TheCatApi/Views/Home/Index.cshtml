@@ -4,9 +4,9 @@
 
 <h2>Welcome to ASP.NET MVC @ViewData["Version"] on @ViewData["Runtime"]!</h2>
 
-<h1>Catefories</h1>
+<h1>Categories</h1>
 <ul>
-@foreach(var item in ViewData.Categories){
+@foreach(var item in @model.Categories){
     <li>@item </li>
     }
 </ul>
