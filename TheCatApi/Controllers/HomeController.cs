@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
+using TheCatApi.ViewModels;
 
 namespace TheCatApi.Controllers
 {
@@ -18,6 +19,13 @@ namespace TheCatApi.Controllers
             ViewData["Runtime"] = isMono ? "Mono" : ".NET";
 
             return View();
+        }
+
+        public ActionResult GetCategories()
+        {
+            var viewModel = new CategoriesViewModel();
+
+            return View(viewModel);
         }
     }
 }

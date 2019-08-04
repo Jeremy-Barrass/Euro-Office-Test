@@ -31,5 +31,18 @@ namespace TheCatApi.Tests.Controllers
             Assert.AreEqual(expectedVersion, result.ViewData["Version"]);
             Assert.AreEqual(expectedRuntime, result.ViewData["Runtime"]);
         }
+
+        [Test]
+        public void GetCategories()
+        {
+            // Arrange
+            var controller = new HomeController();
+
+            // Act
+            var result = (ViewResult)controller.GetCategories();
+
+            // Assert
+            Assert.IsNotEmpty(result.Model.Categories);
+        }
     }
 }
