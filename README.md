@@ -19,11 +19,11 @@ One thing not clear in this test is how rigid the format of the API endpoint url
 
 ### 3) Did you use IOC? Please explain your reasons either way.
 
-Perhaps with the exception of using an MVC architecture pattern, I didn't write enough classes in this test to warrant claiming use of Inversion of Control, but believe the application will naturally gravitate to that principle as more dependencies are managed via Dependency Injection and the Entity Framework is introduced.
+Perhaps with the exception of using an MVC architecture pattern, I didn't write enough classes in this test to warrant claiming use of Inversion of Control, but believe the application will naturally align with that principle as more dependencies are managed via Dependency Injection and the Entity Framework is introduced.  The Dependency Inversion Principle, which tends to emerge as a natural result of isolating code for Unit Testing and decoupling dependencies, complements IOC very well and if common code functionality is being abstracted with the Strategy Pattern or similar, the application will be utilising it.
 
 ### 4) How would you debug an issue in production code?
 
-To start with, by viewing it in situ and 
+I would attempt to view the issue in situ and see if I can replicate it in a UAT environment.  Once I've replicated it, I would work through a local version of the appliction with the debugger and attempt to track down the precise bug location in the code that way.  Once the bug is located I would attempt to ascertain the scope of the solution required, writing up tickets as necessary.  If the scope is small enough, I would attempt a fix on the spot, otherwise I would raise the ticket(s) in the next sprint review/planning session to ensure they were appropriately story pointed by the team.
 
 ### 5) What improvements would you make to the cat API?
 
